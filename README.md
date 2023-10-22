@@ -21,10 +21,10 @@ github上傳:https://www.youtube.com/watch?v=uqDLghdXJHg&ab_channel=%E5%91%82%E5
 
 
 ## 工作分配（遊戲機制）：
-陳鎮成:遊戲畫面（開始、結束、關卡）:chester71206@gmail.com
-彭啟則：移動角色 + 選擇餐點 + 上菜動作 ribk5003@gmail.com
-時間 + 分數 (黃敖山)
-隨機菜單 h8906221@gmail.com
+- 陳鎮成：遊戲畫面（開始、結束、關卡）chester71206@gmail.com
+- 彭啟則：移動角色 + 選擇餐點 + 上菜動作 ribk5003@gmail.com
+- 黃敖山：時間 + 分數 oceanwong524@gmail.com
+- ：隨機菜單 h8906221@gmail.com
 
 ## 初版Deadline：
 10/27
@@ -32,8 +32,7 @@ github上傳:https://www.youtube.com/watch?v=uqDLghdXJHg&ab_channel=%E5%91%82%E5
 ## 下次開會：
 10/27 (五) 上課時間
 
-### Deadline 11/03 
-
+# Deadline 11/03 
 
 ## 我們的遊戲內容：
 遊戲介面切換：開始畫面、遊戲結束畫面、關卡
