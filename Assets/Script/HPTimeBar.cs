@@ -25,11 +25,13 @@ public class HPTimeBar : MonoBehaviour
     }
 
     public void StartTimer(int timeArg) {
-        HP = MaxHP;
-        time = timeArg;
-        isCountingDown = true;
-        _timeText.text = time < 10 ? ("0" + time.ToString()) : time.ToString();
-        Invoke("Tick", 1f);
+        if (!isCountingDown){
+            HP = MaxHP;
+            time = timeArg;
+            isCountingDown = true;
+            _timeText.text = time < 10 ? ("0" + time.ToString()) : time.ToString();
+            Invoke("Tick", 1f);
+        }
     }
 
     void Tick() {
