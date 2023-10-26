@@ -1,29 +1,22 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoxGenerator : MonoBehaviour
 {
     public int boxNum = 5;
     public GameObject boxTemplate;
-    public List<GameObject> boxes;
+    public PositionManager posManager;
 
     void Start()
     {
-        Camera cam = GameObject.FindObjectOfType<Camera>();
-        float cameraHeight = cam.orthographicSize;
-        float cameraWidth = cameraHeight * cam.aspect;
+        posManager.Setup(boxNum);
 
-        float marginX = 0.6f;
-        float marginY = 0.6f;
-        float currX = -cameraWidth * marginX;
-        float currY = -cameraHeight * marginY;
-
+        // instantiate n boxes, where n = boxNum
         for (int i = 0; i < boxNum; ++i)
         {
+            float x = posManager.GetPositionX(i);
+            float y = -posManager.GetCamHalfHeight() * 0.6f;
+            boxTemplate.transform.position = new Vector3(x, y, 0);
             Instantiate(boxTemplate);
-            boxTemplate.transform.position = new Vector3(currX, currY, 0);
-            boxes.Add(boxTemplate);
-            currX += cameraWidth * marginX * 2 / (boxNum - 1);
         }
     }
 }
