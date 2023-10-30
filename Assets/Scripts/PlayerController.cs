@@ -5,15 +5,12 @@ public class PlayerController : MonoBehaviour
     public PositionManager posManager;
     int posXIdx;
     int splitNum;
+    int selectedDishId;
+    bool readyToServe;
 
-    // setup initial player position && some other variables
     void Start()
     {
-        splitNum = posManager.GetSplitNum();
-        posXIdx = splitNum / 2;
-        float x = posManager.GetPositionX(posXIdx);
-        float y = -posManager.GetCamHalfHeight() * 0.2f;
-        this.transform.position = new Vector3(x, y, 0);
+        this.Setup();
     }
 
     void Update()
@@ -36,19 +33,50 @@ public class PlayerController : MonoBehaviour
             this.transform.position = new Vector3(x, y, 0);
         }
 
-        // serve the dish
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) 
-                || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-            serveDish(posXIdx);
+            // serve the dish
+            if (readyToServe && posXIdx == splitNum-1)
+            {
+                serveDish(selectedDishId);
+                readyToServe = false;
+            }
+            else if (posXIdx != splitNum-1) // select/hold the dish
+            {
+                selectDish(posXIdx);
+                readyToServe = true;
+            }
+            else
+            {
+                print("No dish selected and served!");
+            }
         }
     }
 
-    void serveDish(int idx)
+    public void Setup() 
     {
+        readyToServe = false;
+
+        splitNum = posManager.GetSplitNum();
+        posXIdx = splitNum / 2;
+        float x = posManager.GetPositionX(posXIdx);
+        float y = -posManager.GetCamHalfHeight() * 0.2f;
+        this.transform.position = new Vector3(x, y, 0);
+    }
+
+    void serveDish(int dishId)
+    {
+        print($"served dish no.{dishId}");
         // To be done:
         // check whether serve correct dish
         // if wrong -> reduce HP
         // else -> add score
+    }
+
+    void selectDish(int dishId)
+    {
+        print($"selected dish no.{dishId}");
+        this.selectedDishId = dishId;
+        // To be done:
     }
 }

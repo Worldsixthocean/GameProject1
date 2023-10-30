@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 532823681}
   - component: {fileID: 532823680}
   m_Layer: 0
-  m_Name: Box Generator
+  m_Name: Dish Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,12 +149,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 532823679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d43ec4b0279c4ed29ed027abfab4016, type: 3}
+  m_Script: {fileID: 11500000, guid: ff978fc68b4b44a9b92275c7bdabe6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxNum: 5
-  boxTemplate: {fileID: 136965636657385537, guid: 22b68f47cc68a47a4b0b68d7520d02e1, type: 3}
   posManager: {fileID: 1868905644}
+  dish_sprites:
+  - {fileID: 6712879440472678488, guid: 6327a92fb935d4bc783657168e2ec02e, type: 3}
+  - {fileID: 217522042155095837, guid: 9c61fdbc692e347f5b1a9d0e31c11e44, type: 3}
+  - {fileID: 340626408315180504, guid: 6469b335ed57a4badb7fca038dc582b3, type: 3}
+  - {fileID: 6061372287735166186, guid: 9d9aeef7872274bf08d883359a37d08b, type: 3}
+  - {fileID: 3761791049314373542, guid: d3fccd10c39f54c7d9298c0df0557a47, type: 3}
+  - {fileID: 136965636657385537, guid: 22b68f47cc68a47a4b0b68d7520d02e1, type: 3}
 --- !u!4 &532823681
 Transform:
   m_ObjectHideFlags: 0
